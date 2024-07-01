@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    opacity: 0.96;
+    background-image: url('../../img/Jogos-BG-1.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form{
+    position: relative;
+    border-radius: 16px;
+    background-color: #080814;
+    width: 90vw;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form::before, form::after{
+    animation: AnimarBorda 2s linear infinite;
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background: linear-gradient(45deg, #00c7e6, #9b01a9, #df0685, #9b01a9, #00c7e6, #9b01a9);
+    border-radius: 16px;
+}
+
+form::after{
+    filter: blur(32px);
+}
+
+@keyframes AnimarBorda{
+    0%{
+        background-position: 0% 300%;
+    }
+
+    100%{
+        background-position: 300% 0%;
+    }
+}
+
+form fieldset{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form legend, form label{
+    color: #e0e0e0;
+}
+
+form legend{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin: 24px 0;
+    text-align: center;
+    font-size: 1.14rem;
+}
+
+form label, #enviarFormulario{
+    font-weight: 400;
+    font-family: "Inconsolata", monospace;
+}
+
+#nome, #email, #mensagem{
+    font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+    font-size: 0.75rem;
+    text-align: center;
+    background-color: #191928;
+    color: #fafafa;
+    width: 60vw;
+    border: 1px solid #fafafa32;
+    border-radius: 4px;
+    margin: 4px 0 8px;
+}
+
+#mensagem{
+    height: 72px;
+}
+
+form label, #nome, #email, #mensagem{
+    font-size: 0.75rem;
+}
+
+#enviarFormulario{
+    border: none;
+    border-radius: 4px;
+    background-color: #006fe6;
+    color: #fafafa;
+    width: 96px;
+    height: 24px;
+    margin-top: 16px;
+}
+
+@media(min-width: 720px) {
+    form{
+        max-width: 540px;
+    }
+
+    #nome, #email, #mensagem{
+        width: 375px;
+    }
+}
+
+@media(min-width: 1024px){
+    form{
+        max-width: 70vw;
+        height: 520px;
+    }
+
+    form legend{
+        margin: 48px 0;
+        font-size: 1.5rem;
+    }
+
+    form label, #nome, #mensagem, #email, #enviarFormulario{
+        font-size: 1rem;
+    }
+
+    #nome, #email, #enviarFormulario{
+        margin: 8px 0px;
+        height: 24px;
+    }
+
+    #mensagem{
+        height: 120px;
+    }
+
+    #enviarFormulario{
+        margin-top: 48px;
+        width: 160px;
+        height: 32px;
+    }
+
+    #nome, #email, #mensagem{
+        width: 520px;
+    }
+}
+
+@media(min-width: 1440px){
+    form{
+        max-width: 880px;
+    }
+}
+
+@media(min-width: 1920px){
+    form{
+        max-width: 1024px;
+    }
+}
+
+@media(min-width: 2440px) {
+    form{
+        max-width: 1400px;
+        height: 680px;
+    }
+
+    form legend{
+        font-size: 2rem;
+    }
+
+    form label, #nome, #mensagem, #email{
+        font-size: 1.5rem;
+    }
+
+    #mensagem{
+        height: 160px;
+    }
+}
